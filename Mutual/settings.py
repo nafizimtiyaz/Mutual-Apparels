@@ -21,7 +21,7 @@ SECRET_KEY = 'ti5$iav!#k)wp30e7tlzz19=!4=+j%9%#44giw7l5w&z0ui(k_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://nafizimtiyaz.github.io/Mutual-Apparels/']
 
 
 # Application definition
