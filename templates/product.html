@@ -1,0 +1,79 @@
+{% extends "basic.html" %}
+{% block body %}
+{% load static %}
+
+    <!--========= header area end ========== -->
+    <!-- ==========Page area start ========== -->
+    <div class="page-area productPage">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-content">
+                        <h2 class="wow fadeInDown">Our Product</h2>
+                        <ul class="wow fadeInUp">
+                            <li><a href="index.html">Home - </a></li>
+                            <li class="active"><a href="product.html">Product</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============= Page area end =========== -->
+    <!-- ============= About Us Area Start =========== -->
+
+
+    {%for p in mypro%}
+    <section id="jeans" class="portfolio-area section-padding product-section">
+        <div class="container" id="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 text-center">
+                    <div class="section-heading">
+                        <h2 class="wow fadeInDown">{{p.title}}</h2>
+                        <hr>
+                        <p class="wow fadeInUp">{{p.body}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row wow fadeInDown">
+                <div class="col-md-4">
+                    <div class="product">
+                        <div class="productItem">
+                            <img src={{p.image.url}} alt="">
+                            <div class="productItemBorder"></div>
+                            <div class="productItemInfo">
+                                <a href="{%url 'contact'%}">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product">
+                        <div class="productItem">
+                            <img src={{p.image01.url}} alt="">
+                            <div class="productItemBorder"></div>
+                            <div class="productItemInfo">
+                                <a href="{%url 'contact'%}">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product">
+                        <div class="productItem">
+                            <img src="{{p.image02.url}}" alt="">
+                            <div class="productItemBorder"></div>
+                            <div class="productItemInfo">
+                                <a href="{%url 'contact'%}">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        {% endfor %}
+
+    <!-- ============= About Us Area End =========== -->
+{% endblock body %}

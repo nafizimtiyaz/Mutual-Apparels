@@ -1,0 +1,70 @@
+{% extends "basic.html" %}
+{% block body %}
+{% load static %}
+    <div class="page-area board">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-content">
+                        <h2>Our Boardmembers</h2>
+                        <ul>
+                            <li><a href="index.html">Home - </a></li>
+                            <li class="active"><a href="boardmembers.html">Boardmembers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============= Page area end =========== -->
+    <!-- ============= Team Area Start =========== -->
+    <section class="team-area section-padding">
+        <div class="container">
+            <div class="row">
+                    {%for b in dis%}
+                <div class="col-lg-5">
+                    <div class="section-heading team-heading">
+                        <h2 class=" wow fadeInDown">{{b.title}}</h2>
+                        <p class=" wow fadeInUp">{{b.body}}</p>
+                        <a class="theme-btn mt-30  wow fadeInRight" href="">Read more</a>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="col-lg-7">
+                    <div class="row">
+                        {%for m in member%}
+                        <div class="col-md-6 wow fadeInRight">
+
+                            <div class="single-team">
+
+                                <div class="img-hidden">
+                                    <img src="{{m.image.url}}" alt="team">
+                                </div>
+                                <div class="team-content">
+                                    <h3>{{m.name}}</h3>
+                                    <p>{{m.position}}</p>
+                                    <div class="team-social">
+                                        <ul>
+                                            <li><a href="{{m.link}}"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="{{m.link01}}"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="{{m.link02}}"><i class="fab fa-google-plus-g"></i></a></li>
+                                            <li><a href="{{m.link04}}"><i class="fas fa-globe"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============= Team Area End =========== -->
+    <!-- ================= Contact Area Start =============== -->
+
+{% endblock body %}
+

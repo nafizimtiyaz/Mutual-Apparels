@@ -1,0 +1,152 @@
+{%load static%}
+<!doctype html>
+<html class="no-js" lang="la">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="shortcut icon" type="image/png" href={%static "assets/img/logo/favicon.png"%}>
+    <link rel="stylesheet" href={%static "assets/css/animate.css"%}>
+    <link rel="stylesheet" href={%static "assets/css/all.min.css"%}>
+    <link rel="stylesheet" href={%static "assets/css/owl.carousel.min.css"%}>
+    <link rel="stylesheet" href={%static "assets/css/fancybox.min.css"%}>
+    <link rel="stylesheet" href={%static "assets/css/sm-clean.css"%}>
+    <link rel="stylesheet" href={%static "assets/css/sm-core.css"%}>
+    <link rel="stylesheet" href={%static "assets/css/bootstrap.min.css"%}>
+    <link rel="stylesheet" href={%static "assets/css/default.css"%}>
+    <link rel="stylesheet" href={%static "assets/css/style.css"%}>
+    <link rel="stylesheet" href={%static "assets/css/responsive.css"%}>
+</head>
+
+<body>
+        <h1>{{contact.name}}</h1>
+    <!-- ========= preloader area Start =========== -->
+    <div id="preloader">
+        <div class="loader">
+            <img src={%static "assets/img/logo/loader.gif" %} alt="preloader">
+        </div>
+    </div>
+    <!-- ========= preloader area End =========== -->
+    <!-- ============ Header area start ============-->
+    <header class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav" role="navigation">
+                        <!-- Mobile menu toggle button (hamburger/x icon) -->
+                        <input id="main-menu-state" type="checkbox" />
+                        <label class="main-menu-btn" for="main-menu-state">
+                            <span class="main-menu-btn-icon"></span>
+                        </label>
+                        <div class="nav-brand">
+                            <a href="{%url 'home'%}"><img src={%static "assets/img/logo/logo.png"%} alt=""></a>
+                        </div>
+                        <!-- Sample menu definition -->
+                        <ul id="main-menu" class="sm sm-clean">
+                            <li class="active"><a href="{%url 'home' %}">Home</a></li>
+                            <li><a href="{%url 'about'%}">About</a></li>
+                            <li><a href="#">Industries</a>
+                                <ul>
+                                    <li><a href="{%url 'woven'%}">Woven</a></li>
+                                    <li><a href="{%url 'sweater'%}">Sweater</a></li>
+                                    <li><a href="">Wash</a>
+                                        <ul>
+                                            <li><a href="{%url 'normalwash'%}">Normal Wash</a></li>
+                                            <li><a href="{%url 'pigmentwash'%}">Pigment Wash</a></li>
+                                            <li><a href="{%url 'bleachwash'%}">Bleach Wash</a></li>
+                                            <li><a href="{%url 'stonewash'%}">Stone Wash</a></li>
+                                            <li><a href="{%url 'acidwash'%}">Acid Wash</a></li>
+                                            <li><a href="{%url 'enzymewash'%}">Enzyme Wash</a></li>
+                                            <li><a href="{%url 'custicwash'%}">Caustic Wash</a></li>
+                                            <li><a href="{%url 'garmentwash'%}">Garment wash and over-dye</a></li>
+                                            <li><a href="{%url 'whitening'%}">Whitening</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{%url 'denim'%}">Denim Mill</a></li>
+                                    <li><a href="{%url 'accessories'%}">Accessories Unit</a></li>
+                                    <li><a href="{%url 'design'%}">Design & Sample</a></li>
+                                    <li><a href="{%url 'ancillary'%}">Ancillary</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{%url 'products'%}">Product</a></li>
+                            <li><a href="{%url 'merchandising'%}">Merchandising</a></li>
+                            <li><a href="{% url 'member' %}">Board Members</a></li>
+                            <li><a href="{%url 'contact'%}">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+        {% block body %}
+        {% endblock %}
+
+    <!-- ================= Contact Area Start =============== -->
+    <section class="contact-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 wow fadeInRight">
+                    <div class="contact-content">
+                        <h4>Contact Info:</h4>
+                        <p>You can get in touch with us if you have any queries.</p>
+                        <h6><span>Address: </span>  South Gouripur, Ashulia, Savar</h6>
+                        <h6><span>Phone: </span>  9635034, 01711264368</h6>
+                        <h6><span>Email: </span>  info@MutualWashing.com</h6>
+                        <div class="footer-socail">
+                            {%}
+                            <ul>
+                                            <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="https://gmail.com/"><i class="fab fa-google-plus-g"></i></a></li>
+                                            <li><a href="https://www.youtube.com/"><i class="fas fa-globe"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1 wow fadeInLeft">
+                    <div class="contact-form">
+                      <form method="POST" action="{%url 'feedback'%}">
+                            {% csrf_token %}
+                            <div class="input">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="input">
+                                <input type="email" name="Email" placeholder="Your Email" required>
+                            </div>
+                            <div class="input">
+                                <input type="text" name="subjects" placeholder="subjects" required>
+                            </div>
+                            <div class="input">
+                                <textarea name="message" id="text-area" cols="30" rows="6" placeholder="Your Comment" required></textarea>
+                            </div>
+                            <button class="submit theme-btn  wow fadeInUp">send message</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================= Contact Area End =============== -->
+    <footer>
+        <p>Copyright 2020 - Mutual Apparels | All Rights Reserved</p>
+    </footer>
+
+    <!-- ========== Footer Area End ============-->
+    <script src={%static "assets/js/jquery-3.3.1.min.js"%}></script>
+    <script src={%static "assets/js/bootstrap.min.js"%}></script>
+    <script src={%static "assets/js/owl.carousel.min.js"%}></script>
+    <script src={%static "assets/js/fancybox.min.js"%}></script>
+    <script src={%static "assets/js/wow.min.js"%}></script>
+    <script src={%static "assets/js/imagesloaded.pkgd.min.js"%}></script>
+    <script src={%static "assets/js/isotope.pkgd.min.js"%}></script>
+    <script src={%static "assets/js/smartmenus.min.js"%}></script>
+    <script src={%static "assets/js/main.js"%}></script>
+
+</body>
+
+</html>

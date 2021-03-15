@@ -1,0 +1,117 @@
+{% extends "basic.html" %}
+{% block body %}
+{% load static %}
+<body>
+
+    <!--========= header area end ========== -->
+    <!-- ==========Page area start ========== -->
+    <div class="page-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-content">
+                        <h2 class="wow fadeInDown">About Us</h2>
+                        <ul class="wow fadeInUp">
+                            <li><a href="index.html">Home - </a></li>
+                            <li class="active"><a href="about.html">About us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============= Page area end =========== -->
+    <!-- ============= About Us Area Start =========== -->
+
+    <section class="about-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 wow fadeInRight">
+                    {% for a in about %}
+                    <div class="about-heading">
+                        <!-- <h2 class="wow fadeInDown">About Us</h2> -->
+                        <h4 class="wow fadeInUp">{{a.title}}</h4>
+                        <p>{{a.body}}</p>
+                        <!-- <a href="" class="theme-btn  wow fadeInUp">Read More</a> -->
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= About Us Area End =========== -->
+    <!-- ============= Team Area Start =========== -->
+    <section class="team-area section-padding">
+        <div class="container">
+            <div class="row">
+                {%for b in dis%}
+                <div class="col-lg-5">
+
+                    <div class="section-heading team-heading">
+                        <h2 class=" wow fadeInDown">{{b.title}}</h2>
+                        <p class=" wow fadeInUp">{{b.body}}</p>
+                        <a class="theme-btn mt-30  wow fadeInRight" href="">Read more</a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-lg-7">
+                    <div class="row">
+<!--                        Section start let's Start loop-->
+                        {%for m in member%}
+                        <div class="col-md-6 wow fadeInRight">
+                            <div class="single-team">
+                                <div class="img-hidden">
+                                    <img src="{{m.image.url}}" alt="team">
+                                </div>
+                                <div class="team-content">
+                                    <h3>{{m.name}}</h3>
+                                    <p>{{m.position}}</p>
+                                    <div class="team-social">
+                                        <ul>
+                                            <li><a href="{{m.link}}"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="{{m.link01}}"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="{{m.link02}}"><i class="fab fa-google-plus-g"></i></a></li>
+                                            <li><a href="{{m.link04}}"><i class="fas fa-globe"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+<!--                        Stop loop here-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============= Team Area End =========== -->
+    <!-- ============= Subscribe Area Start =========== -->
+    <section class="subscribe-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading">
+                        <h2 class="wow fadeInDown">Subscribe</h2>
+                        <p class="wow fadeInUp">Enter Your Email to Subcribe Us.</p>
+                    </div>
+                </div>
+                <div class="col-lg-8 offset-lg-2 wow bounceIn">
+                    <form action="">
+                        <div class="subscribe-input">
+                            <input type="email" placeholder="Enter Your Email Here">
+                            <button class="sub theme-btn">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============= Subscribe Area End =========== -->
+
+
+
+{% endblock body %}
+
+
